@@ -1,0 +1,472 @@
+dim 130 80
+
+background 210 245 254
+
+
+expression pi {3.141}
+linethickness 1.1
+
+color 255 115 100
+point c1 115 49 80 44
+%cmark_lt c1
+point dot 115 49
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 255 165 0
+point c1 114.3 48.3 80 44
+%cmark_lt c1
+point dot 114.3 48.3
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 255 255 0
+point c1 113.6 47.6 80 44
+%cmark_lt c1
+point dot 113.6 47.6
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 9 121 105
+point c1 112.9 46.9 80 44
+%cmark_lt c1
+point dot 112.9 46.9
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 100 149 237
+point c1 112.2 46.2 80 44
+%cmark_lt c1
+point dot 112.2 46.2
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 0 0 205
+point c1 111.5 45.5 80 44
+%cmark_lt c1
+point dot 111.5 45.5
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 138 43 226
+point c1 110.8 44.8 80 44
+%cmark_lt c1
+point dot 110.8 44.8
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+color 207 159 255
+point c1 110.1 44.1 80 44
+%cmark_lt c1
+point dot 110.1 44.1
+cmark_lt dot
+expression ang {50*pi}
+drawarc c1 dot ang
+
+%trava
+color 0 200 0
+point d 0 0
+point g 130 35
+fillrectangle d g
+
+%suncokreti
+number n 10
+number a 27.5
+number xk 10
+number cx 10
+number ax 7.5
+point thetaPoint 0 1 15 0
+getx theta thetaPoint
+while {n < 130}
+{
+	%jos dalji pored suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n+2.7}
+	ang_origin e 50
+	ang_unit 2.5
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 0.7
+
+	ang_draw_parametric_curve t 	{0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)	+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx+2.6}
+	point C e1 49.7
+	expression e2 {ax+2.6}
+	point A e2 48.5
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3 {xk+2.5}
+	point dl e3 25
+	expression e4 {xk+2.5}
+	point gd e4 46.2
+	fillrectangle dl gd
+
+	
+	%jos dalji suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n+12.7}
+	ang_origin e 50
+	ang_unit 2.5
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 0.7
+
+	ang_draw_parametric_curve t 	{0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)	+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx+12.5}
+	point C e1 49.8
+	expression e2 {ax+12.5}
+	point A e2 48.5
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3 {xk+12}
+	point dl e3 25
+	expression e4 {xk+12}
+	point gd e4 46.4
+	fillrectangle dl gd
+
+	%najdalji pored suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n}
+	ang_origin e 40
+	ang_unit 2.7
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 0.7
+
+	ang_draw_parametric_curve t {0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx+0.2}
+	point C e1 40
+	expression e2 {ax+0.2}
+	point A e2 38.6
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3 {xk+10}
+	point dl e3 15
+	expression e4 {xk+10}
+	point gd e4 35.8
+	fillrectangle dl gd
+	
+	
+
+	%najdalji suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n+10}
+	ang_origin e 40
+	ang_unit 2.7
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 0.7
+
+	ang_draw_parametric_curve t {0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx+10}
+	point C e1 40
+	expression e2 {ax+10}
+	point A e2 38.6
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3 {xk+10}
+	point dl e3 15
+	expression e4 {xk+10}
+	point gd e4 35.8
+	fillrectangle dl gd
+	
+	
+	%dalji suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n+10.5}
+	ang_origin e 30
+	ang_unit 2.2
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 1
+
+	ang_draw_parametric_curve t {0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx+11}
+	point C e1 30
+	expression e2 {ax+11}
+	point A e2 27.7
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3 {xk+5}
+	point dl e3 5
+	expression e4 {xk+5}
+	point gd e4 25.8
+	fillrectangle dl gd
+	
+	%dalji pored suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n-0.7}
+	ang_origin e 30
+	ang_unit 2.2
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 1
+
+	ang_draw_parametric_curve t {0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx-1}
+	point C e1 30
+	expression e2 {ax-1}
+	point A e2 27.7
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3 {xk-1}
+	point dl e3 5
+	expression e4 {xk-1}
+	point gd e4 25.8
+	fillrectangle dl gd
+	
+	
+	%izmedju suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	expression e {n + 10}
+	ang_origin e 22
+	ang_unit 2.3
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 1
+
+	ang_draw_parametric_curve 		t {0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	expression e1 {cx + 10} 
+	point C e1 22
+	expression e2 {ax + 10}
+	point A e2 19
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	expression e3  {xk+9.5}
+	point dl e3 0
+	expression e4  {xk+9.5}
+	point gd e4 17.5
+	fillrectangle dl gd
+
+	%blizi suncokreti
+	linethickness 2
+	ang_picture 0 0 150 100
+	ang_origin n 15
+	ang_unit 2.5
+	
+	expression pi {3.141}
+	
+	color 250 250 0
+
+	number k 3.8
+	number r 1
+
+	ang_draw_parametric_curve 		t {0;t < 20*pi; t+0.1}
+	{(r*(k-1)*cos(t)+r*cos((k-1)*t))*cos(theta)-(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*sin(theta);
+(r*(k-1)*cos(t)+r*cos((k-1)*t))*sin(theta)+(r*(k-1)*sin(t)-r*sin((k-1)*t)
+)*cos(theta)}
+	
+	%krugovi
+	color 150 70 10
+	point C cx 15
+	point A ax 11.5
+	circle O C A 
+	drawcircle O
+	fillcircle O
+	
+	%stabljike
+	linethickness 0.7
+	color 110 200 0
+	point dl xk 0
+	point gd xk 10
+	fillrectangle dl gd
+
+	expression n {n+20}
+	expression ax {ax+20}
+	expression cx {cx + 20}
+	expression xk {xk+20}
+}
+
+%sunce
+color 255 255 0
+ang_picture 0 0 125 100
+ang_origin 17 70
+ang_unit 1.3
+
+point O 17 70
+point O' 20 76
+fillcircle O O' 
+number kk 7.2
+number rr 1
+
+ang_draw_parametric_curve tt
+ {0;tt < 10*pi; tt+0.1}
+{(rr*(kk-1)*cos(tt)+rr*cos((kk-1)*tt))*cos(theta)-(rr*(kk-1)*sin(tt)-rr*sin((kk-1)*tt)
+)*sin(theta);
+(rr*(kk-1)*cos(tt)+rr*cos((kk-1)*tt))*sin(theta)+(rr*(kk-1)*sin(tt)-r*sin((kk-1)*tt)
+)*cos(theta)}
+
+
+animation_frames 125 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
